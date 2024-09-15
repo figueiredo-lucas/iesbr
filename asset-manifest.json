@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/iesbr/static/css/main.817eead9.css",
+    "main.js": "/iesbr/static/js/main.c8ec3c44.js",
+    "index.html": "/iesbr/index.html",
+    "main.817eead9.css.map": "/iesbr/static/css/main.817eead9.css.map",
+    "main.c8ec3c44.js.map": "/iesbr/static/js/main.c8ec3c44.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.817eead9.css",
+    "static/js/main.c8ec3c44.js"
+  ]
+}

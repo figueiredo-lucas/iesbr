@@ -5,26 +5,42 @@ const cadastros = [{
     email: 'ccomp.lucas@gmail.com',
     nome: 'Lucas Xavier Rocha Figueiredo',
     curso: 'Pós Graduação em Arquitetura de Sistemas',
-    periodo: '2º Semestre 2024',
     foto: 'lucas.jpeg'
 }, {
     email: 'andreluchine@gmail.com',
     nome: 'André Araújo Luchine',
     curso: 'Pós Graduação em Ciência de Dados e Big Data',
-    periodo: '2º Semestre 2024',
     foto: 'luch.jpeg'
 }, {
     email: 'rayssa.araujo24@gmail.com',
     nome: 'Rayssa Arianne Morais de Araújo',
     curso: 'MBA - Gestão em Estratégias de UX',
-    periodo: '2º Semestre 2024',
     foto: 'rayssa.jpeg'
 }, {
     email: 'itamara.cunha@gmail.com',
     nome: 'Itamara Esteves da Cunha',
     curso: 'Jornalismo',
-    periodo: '6º Semestre 2024',
     foto: 'itamara.jpeg'
+}, {
+    email: 'theus.sanchez@gmail.com',
+    nome: 'Matheus Sanchez',
+    curso: 'Pós Graduação em Arquitetura de Sistemas',
+    foto: 'matheus2.png'
+}, {
+    email: 'thainaramiranda.ux@gmail.com',
+    nome: 'Thaínara de Miranda Lopes',
+    curso: 'MBA - Gestão em Estratégias de UX',
+    foto: 'thainara.png'
+}, {
+    email: 'fsanchez.izabela@gmail.com',
+    nome: 'Izabela Figueiredo Sanchez',
+    curso: 'Design Gráfico',
+    foto: 'izabela.jpeg'
+}, {
+    email: 'victorsktfxd@gmail.com',
+    nome: 'Victor Alexandre da Silva',
+    curso: 'Ciência de Dados e Machine Learning Engineering',
+    foto: 'victor.jpeg'
 }]
 
 function App() {
@@ -33,7 +49,10 @@ function App() {
     const [open, setOpen] = useState(false)
     const [modal, setModal] = useState(false)
     const date = new Date()
-
+    
+    const periodo = `${date.getMonth() < 6 ? '1º' : '2º'} Semestre ${date.getFullYear()}`
+    const diaDaSemana = date.getDay()
+    
     const logar = () => {
         if (!email) return
         const usr = cadastros.find(c => c.email === email)
@@ -46,7 +65,9 @@ function App() {
         <div className="App">
             {!usuario &&
                 <div className="login-page">
-                    <img src="logo.png" />
+                    <div className="logo-box">
+                        <img src="/iesbr/logo2.png" />
+                    </div>
                     <div className="card">
                         <div className="input-field">
                             <input placeholder="Aluno ou Responsável" type="text" value={email} onChange={(ev) => setEmail(ev.target.value)} />
@@ -67,7 +88,7 @@ function App() {
             {!!usuario &&
                 <div className="account">
                     <header className="header">
-                        <img style={{ width: '48px' }} src="logo.png" />
+                        <img style={{ width: '48px' }} src="iesbr/logo2.png" />
                         <div className="hamb-wrap">
                             <div className="hamb" onClick={() => setOpen(!open)}>
                             </div>
@@ -96,11 +117,11 @@ function App() {
                             <header className="header">Aulas</header>
                             <div className="inner-body">
                                 <ul>
-                                    <li className="active">Seg</li>
-                                    <li>Ter</li>
-                                    <li>Qua</li>
-                                    <li>Qui</li>
-                                    <li>Sex</li>
+                                    <li className={diaDaSemana === 2 ? "active" : ""}>Seg</li>
+                                    <li className={diaDaSemana === 2 ? "active" : ""}>Ter</li>
+                                    <li className={diaDaSemana === 3 ? "active" : ""}>Qua</li>
+                                    <li className={diaDaSemana === 4 ? "active" : ""}>Qui</li>
+                                    <li className={diaDaSemana === 5 ? "active" : ""}>Sex</li>
                                 </ul>
                                 <div className="current">
                                     Nenhuma aula hoje.
@@ -112,22 +133,22 @@ function App() {
                     {modal && <div className="modal-wrapper" onClick={() => setModal(false)}>
                             <div className="modal">
                                 <header className="modal-header">
-                                    <img src="logo.png" />
+                                    <img src="iesbr/logo.png" />
                                 </header>
                                 <div className="modal-body">
-                                    <img className="body-foto" src={usuario.foto} alt="" style={{width: '120px', height: '160px'}} />
+                                    <img className="body-foto" src={`iesbr/${usuario.foto}`} alt="" style={{width: '120px', height: '160px'}} />
                                     <div className="dados">
                                         <span style={{fontSize: '1rem', fontWeight: 'bold', marginBottom: '1rem' }}>{usuario.nome}</span>
                                         <span><b>Curso: </b>{usuario.curso}</span>
                                         <span><b>RA: </b>{Math.ceil(Math.random() * 10000000)}</span>
-                                        <span><b>Período: </b>{usuario.periodo}</span>
+                                        <span><b>Período: </b>{periodo}</span>
                                         <span><b>Campus: </b>Taguatinga II</span>
                                         <span><b>Turno: </b>Noturno</span>
                                         <span><b>Situação: </b>Matriculado</span>
                                     </div>
                                 </div>
                                 <div className="qr-code">
-                                    <img src="qrcode.png" style={{ width: '80px' }} alt="" />
+                                    <img src="iesbr/qrcode.png" style={{ width: '80px' }} alt="" />
                                     <span>Clique para atualizar</span>
                                 </div>
                                 <footer className="modal-footer">

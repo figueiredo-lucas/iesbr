@@ -55,7 +55,7 @@ function App() {
     
     const logar = () => {
         if (!email) return
-        const usr = cadastros.find(c => c.email === email)
+        const usr = cadastros.find(c => c.email.toLowerCase() === email.toLowerCase())
         if (!usr) return
 
         setUsuario(usr)

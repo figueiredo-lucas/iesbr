@@ -66,7 +66,7 @@ function App() {
             {!usuario &&
                 <div className="login-page">
                     <div className="logo-box">
-                        <img src="/logo2.png" />
+                        <img src="logo2.png" />
                     </div>
                     <div className="card">
                         <div className="input-field">

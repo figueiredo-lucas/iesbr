@@ -66,7 +66,7 @@ function App() {
             {!usuario &&
                 <div className="login-page">
                     <div className="logo-box">
-                        <img src="/iesbr/logo2.png" />
+                        <img src="/logo2.png" />
                     </div>
                     <div className="card">
                         <div className="input-field">
@@ -88,7 +88,7 @@ function App() {
             {!!usuario &&
                 <div className="account">
                     <header className="header">
-                        <img style={{ width: '48px' }} src="iesbr/logo2.png" />
+                        <img style={{ width: '48px' }} src="logo2.png" />
                         <div className="hamb-wrap">
                             <div className="hamb" onClick={() => setOpen(!open)}>
                             </div>
@@ -133,10 +133,10 @@ function App() {
                     {modal && <div className="modal-wrapper" onClick={() => setModal(false)}>
                             <div className="modal">
                                 <header className="modal-header">
-                                    <img src="iesbr/logo.png" />
+                                    <img src="logo.png" />
                                 </header>
                                 <div className="modal-body">
-                                    <img className="body-foto" src={`iesbr/${usuario.foto}`} alt="" style={{width: '120px', height: '160px'}} />
+                                    <img className="body-foto" src={`${usuario.foto}`} alt="" style={{width: '120px', height: '160px'}} />
                                     <div className="dados">
                                         <span style={{fontSize: '1rem', fontWeight: 'bold', marginBottom: '1rem' }}>{usuario.nome}</span>
                                         <span><b>Curso: </b>{usuario.curso}</span>
@@ -148,7 +148,7 @@ function App() {
                                     </div>
                                 </div>
                                 <div className="qr-code">
-                                    <img src="iesbr/qrcode.png" style={{ width: '80px' }} alt="" />
+                                    <img src="qrcode.png" style={{ width: '80px' }} alt="" />
                                     <span>Clique para atualizar</span>
                                 </div>
                                 <footer className="modal-footer">

@@ -41,6 +41,11 @@ const cadastros = [{
     nome: 'Victor Alexandre da Silva',
     curso: 'Ciência de Dados e Machine Learning Engineering',
     foto: 'victor.jpeg'
+}, {
+    email: 'mariaeduardaps20067@gmail.com',
+    nome: 'Maria Eduarda dos Passos de Souza',
+    curso: 'Fisioterapia',
+    foto: 'duda.jpeg'
 }]
 
 function App() {
